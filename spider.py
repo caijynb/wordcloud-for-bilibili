@@ -26,13 +26,15 @@ for i in soup.find_all('d'):
     word_split = ' '.join([word_split, word])
 f.close()
 
-wordcloud = WordCloud(font_path="C:\\Windows\\Fonts\\STXINGKA.TTF",
+wordcloud = WordCloud(font_path="C:\\Windows\\Fonts\\STXINGKA.TTF",#指定中文字体的路径
                       background_color="white",
                       width=1920, height=1080,
                       font_step=5,
                       random_state= 30,
                       min_font_size=15,max_font_size=200,
+                      #stopwords是不需要加入到词云图里面的词，一般都是些常见的无意义的词。
                       stopwords=['不是','我们','前面','这个','应该','不要','其实','那么']).generate(word_split)
+
 wordcloud.to_file('pic.png')
 
 
