@@ -22,8 +22,8 @@ f=open("弹幕.txt",'w',encoding='utf-8')
 word_split=''
 for i in soup.find_all('d'):
     f.write(i.text+'\n')
-    word=' '.join(jieba.cut(i.text,cut_all=False))  #分词得到的结果
-    word_split = ' '.join([word_split, word])
+    words=' '.join(jieba.cut(i.text,cut_all=False))  #分词得到的结果
+    word_split = ' '.join([word_split, words])
 f.close()
 
 wordcloud = WordCloud(font_path="C:\\Windows\\Fonts\\STXINGKA.TTF",#指定中文字体的路径
